@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/static/index.css">
+    <title>Formulário</title>
+</head>
+<body>
+    
+    <form action="/automação/modo1.py" method="post">
+
+        <h1>ENVIO MENSAGEM<BR>WHATSAPP</h1><br>
+            
+        <label class="telefone">NÚMERO DE TELEFONE</label>
+                
+        <input type="text" id="telefone" name="telefone" required><br><br>
+                
+        <label class="mensagem">MENSAGEM</label>
+        <textarea id="mensagem" name="mensagem" required></textarea><br><br>
+                
+        <input type="button" value="ADICIONAR" class="botão1" onclick="adicionarNumeroEMensagem()"><br><br> 
+                
+            <div id="numeros-mensagens">
+                <!-- Números e mensagens adicionados aparecerão aqui -->
+            </div>
+                
+        <input type="submit" class="botão2" value="SALVAR E ENVIAR" > 
+            
+    </form>
+  
+    
+    <script>
+        var contador = 0;
+        
+        function adicionarNumeroEMensagem() {
+            var telefone = document.getElementById("telefone").value;
+            var mensagem = document.getElementById("mensagem").value;
+            
+            if (telefone !== "" && mensagem !== "") {
+                var divNumerosMensagens = document.getElementById("numeros-mensagens");
+                var numeroSpan = document.createElement("span");
+                numeroSpan.innerHTML = telefone;
+                numeroSpan.setAttribute("name", "numero-" + contador);
+                divNumerosMensagens.appendChild(numeroSpan);
+                
+                var inputHiddenTelefone = document.createElement("input");
+                inputHiddenTelefone.setAttribute("type", "hidden");
+                inputHiddenTelefone.setAttribute("name", "telefone-" + contador);
+                inputHiddenTelefone.setAttribute("value", telefone);
+                divNumerosMensagens.appendChild(inputHiddenTelefone);
+                
+                var mensagemSpan = document.createElement("span");
+                mensagemSpan.innerHTML = mensagem;
+                mensagemSpan.setAttribute("name", "mensagem-" + contador);
+                divNumerosMensagens.appendChild(mensagemSpan);
+                
+                var inputHiddenMensagem = document.createElement("input");
+                inputHiddenMensagem.setAttribute("type", "hidden");
+                inputHiddenMensagem.setAttribute("name", "mensagem-" + contador);
+                inputHiddenMensagem.setAttribute("value", mensagem);
+                divNumerosMensagens.appendChild(inputHiddenMensagem);
+                
+                contador++;
+                
+                document.getElementById("telefone").value = "";
+                document.getElementById("mensagem").value = "";
+            }
+        }
+    </script>
+</body>
+</html>

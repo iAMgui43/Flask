@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Enviar Mensagens</title>
+</head>
+<body>
+    <h1>Enviar Mensagens</h1>
+    <form class="form3" action="/automação/modo3.py" method="post" enctype="multipart/form-data">
+        
+        <label for="mensagem">Digite a mensagem:</label>
+        <input type="text" name="mensagem" id="mensagem" >
+        <button type="button" onclick="adicionarMensagem()">Adicionar</button><br>
+        <div id="mensagens-adicionadas"></div>
+        <input type="hidden" name="mensagens_adicionadas" id="hidden-mensagens-adicionadas" value="">
+
+        <!-- Adicionar campo para selecionar uma imagem -->
+        <label for="imagem">Enviar imagem:</label>
+        <input type="file" name="imagem" id="imagem"><br>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        function adicionarMensagem() {
+            const mensagem = document.getElementById('mensagem').value;
+            const divMensagens = document.getElementById('mensagens-adicionadas');
+            const p = document.createElement('p');
+            p.innerHTML = mensagem;
+            divMensagens.appendChild(p);
+
+            // Atualizar o campo hidden com as mensagens adicionadas
+            const mensagensAdicionadas = document.getElementById('hidden-mensagens-adicionadas');
+            mensagensAdicionadas.value += mensagem + '\n';
+
+            // Limpar o campo de entrada
+            document.getElementById('mensagem').value = '';
+        }
+    </script>
+</body>
+</html>

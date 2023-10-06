@@ -1,0 +1,162 @@
+body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+   
+}
+h1 {
+    color: aqua;
+    text-align: center;
+    font-size: 20px;
+    font-family: "Arial Rounded", sans-serif; 
+    margin-top: 2px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 450px;
+    max-width: 350px; /* Defina um valor menor para limitar a largura máxima */
+    margin: 60px auto; /* Adiciona margens automáticas nas laterais para centralizar o formulário */
+    padding: 20px;
+    background-color: #332F2E;
+    border-radius: 10px;
+    box-shadow: 0.5px 3px 4px rgba(255, 255, 255, 0.3),  0 -4px 4px rgba(255, 255, 255, 0.3);
+    font-family: "Arial Rounded", sans-serif; 
+    font-size: 14px;
+  }
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  input[type="text"],
+  textarea {
+    display: block;
+    margin-bottom: 10px;
+    resize: none; /* Impede o ajuste manual da altura */
+  }
+
+  #telefone{
+    width: 200px;
+    height: 23px;
+    border-radius: 8px;
+    color: aliceblue;
+    box-shadow: 0.5px 3px 4px rgba(15, 13, 13, 0.838),  0 -4px 4px rgba(15, 13, 13, 0.838);
+    -webkit-animation: pulse 2.0s infinite;
+  }
+
+  #telefone:hover{
+    background-color: rgba(0, 0, 255, 0.114);
+  }
+
+  #mensagem {
+    width: 220px;
+    height: 70px;
+    border-radius: 8px;
+    overflow-y: auto;
+    box-shadow: 0.5px 3px 4px rgba(15, 13, 13, 0.838), 0 -4px 4px rgba(15, 13, 13, 0.838);
+    -webkit-animation: pulse 2.0s infinite;
+  }
+  
+  #mensagem:hover{
+    background-color: rgba(0, 0, 255, 0.114);
+  }
+
+  #numeros-mensagens {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .telefone{
+    color: white;
+  }
+
+  .mensagem{
+    color: white;
+    margin-top: -20px;
+    
+    
+  }
+
+ 
+
+  textarea#mensagem {
+    transition: all 0.3s ease; /* Adiciona uma transição suave */
+  }
+  
+  textarea#mensagem:not(:focus) {
+    background-color: 
+    transform: scale(1); /* Define o tamanho normal */
+  }
+  
+  textarea#mensagem:focus {
+    background-color: #f2f2f2; /* Define a cor de fundo quando estiver selecionado */
+    transform: scale(1.05); /* Define um aumento de tamanho */
+  }
+
+  textarea#telefone{
+    transition: all 0.3s ease; /* Adiciona uma transição suave */
+  }
+  
+  textarea#telefone:not(:focus) {
+   
+    transform: scale(1); /* Define o tamanho normal */
+  }
+  
+  textarea#telefone:focus {
+    background-color: #f2f2f2; /* Define a cor de fundo quando estiver selecionado */
+    transform: scale(1.05); /* Define um aumento de tamanho */
+  }
+  
+
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .botão1{
+    width: 220px;
+    height: 28px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    background-color: rgba(5, 3, 3, 0.573);
+    cursor: pointer;
+  }
+
+.botão1:hover{
+  background-color: black;
+  -webkit-animation: pulse 2.0s infinite;
+}
+
+.botão2{
+    width: 220px;
+    height: 28px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    background-color: rgba(5, 3, 3, 0.573);
+    cursor: pointer;
+}
+
+.botão2:hover{
+    background-color: black;
+    -webkit-animation: pulse 2.0s infinite;
+}
+
+
+
+
